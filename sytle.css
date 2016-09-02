@@ -1,0 +1,18 @@
+.makeBorder{
+    border: 1px solid #c4e3f3;
+    padding: 5px;
+}
+
+.main-nav{
+    background-color: #4e7f16;
+    color: white;
+}
+.sec-nav{
+    background-color: #4e7f16;
+    color: #f4f5ff;
+
+}
+#product{
+top:56px;
+    position:relative;
+}
