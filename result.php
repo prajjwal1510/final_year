@@ -41,7 +41,7 @@ if(isset($_GET['search'])) {
     <div class='col-md-3'>
                 <div class='thumbnail' style='text-align: center;'>
                 <h3>$book_title</h3>
-                <img src='admin_area/product_images/$book_image' width='100px' height='180px'/>
+                <img src='admin_area/product_images/$book_image' width='60%' height='100px'/>
                 <p><b>Price : Rs. $book_price</b></p>
                 <a class='btn btn-primary ' href='detail.php?book_id=$book_id' style=''>Details</a>
                 </div>

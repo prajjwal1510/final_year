@@ -16,7 +16,7 @@ include("service/functions.php");
 <?php include 'design/layout/_header.php'; ?>
 <div class="container">
     <legend style="text-align: center"><h2>Insert Request</h2></legend>
-    <form method="post" action="insert_request.php" enctype="multipart/form-data">
+    <form method="post" action="insert_request.php" enctype="multipart/form-data" style="margin:0 auto;width: 40%; border-radius: 5px;box-shadow: 2px 2px 2px 2px black;padding:10px;">
         <div class="form-group">
             <label>Book Title</label>
             <input type="text" class="form-control" name="book_title" id="title" aria-describedby="booktitle" placeholder="Enter Book Name">

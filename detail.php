@@ -27,7 +27,7 @@ include("service/functions.php")
 
     <!-- /detail main -->
     <div class="col-md-10">
-    <legend style="text-align: center"><h2>Book Detail</h2></legend>
+        <legend style="text-align: center"><h2>Book Detail</h2></legend>
         <?php
         if(isset($_GET['book_id'])) {
             $book_id = $_GET['book_id'];
@@ -50,19 +50,24 @@ include("service/functions.php")
                     <div class='col-md-6'>
 
                             <h3>$book_title</h3>
-                            <img src='admin_area/product_images/$book_image' width='400' height='300'/>
+                            <img src='admin_area/product_images/$book_image' width='400' height='400'/>
 </div>
                         <div id = 'product'>
 
                     <div class='col-md-6'>
-                      <legend>Book Detail</legend>
-                    <b><p>Price:</b>Rs. $book_price</p>
-                            <b><p>Description:</b> $book_desc</p>
-							<b><p>Author:</b> $book_author</p>
+                    <div class='card card-inverse card-success text-md-center'>
+  <div class='card-block'>
+          <h2> Book Details </h2>
+          <p> <strong>Price :</strong>Rs. $book_price</p>
+          <p> <strong>Description :</strong> $book_desc </p>
+          <p> <strong>Author :</strong> $book_author </p>
+  </div>
+</div>
 
 
                     ";
 
+                echo "<hr>";
                 $user_id=$_SESSION['user'];
                 $info = "SELECT users.user_name, users.fname, users.address, users.contact FROM users INNER JOIN book ON book.user_id=users.user_id limit 0,1";
                 $run_info=mysqli_query($con,$info);
@@ -74,22 +79,14 @@ include("service/functions.php")
                     $contact=$row_info['contact'];
                     $fname=$row_info['fname'];
                     echo "
-
-                     <table>
-                    <legend>Uploader Detail</legend>
-					 <tr>
-					 <td><strong>User Name:</strong></td>
-					 <td>$user_name</td>
-					 </tr>
-					 <tr>
-					 <td><strong>Address: </strong></td>
-					 <td>$address</td>
-					 </tr>
-					 <tr>
-					 <td><strong>Contact: </strong></td>
-					 <td>$contact</td>
-					 </tr>
-					 </table>
+<div class='card card-inverse card-success text-md-center'>
+  <div class='card-block'>
+          <h2> Uploader Details </h2>
+          <p> <strong>Username :</strong> $user_name</p>
+          <p> <strong>Address :</strong> $address </p>
+          <p> <strong>Contact :</strong> $contact </p>
+  </div>
+</div>
 							";
 
                 }
@@ -106,13 +103,13 @@ include("service/functions.php")
 
 </div>
 
-    <!-- Recommendation Books -->
-    <!--<legend style="text-align: center">Recommendation Books</legend>
-    <div class="col-md-3 " style="text-align: center;"><div class="thumbnail">Muna Madan</div></div>
-    <div class="col-md-3"  style="text-align: center;"><div class="thumbnail">Book1</div></div>
-    <div class="col-md-3" style="text-align: center;"><div class="thumbnail">Book2</div></div>
-    <div class="col-md-3" style="text-align: center;"><div class="thumbnail">Book3</div></div>-->
-    </div>
+<!-- Recommendation Books -->
+<!--<legend style="text-align: center">Recommendation Books</legend>
+<div class="col-md-3 " style="text-align: center;"><div class="thumbnail">Muna Madan</div></div>
+<div class="col-md-3"  style="text-align: center;"><div class="thumbnail">Book1</div></div>
+<div class="col-md-3" style="text-align: center;"><div class="thumbnail">Book2</div></div>
+<div class="col-md-3" style="text-align: center;"><div class="thumbnail">Book3</div></div>-->
+</div>
 </div>
 </body>
 </html>

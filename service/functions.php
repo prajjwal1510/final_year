@@ -183,19 +183,27 @@ function getBook()
                 $book_price = $row_book['book_price'];
                 $book_image = $row_book['book_image'];
                 echo "
+
                 <div class='col-md-3'>
-                <div class='thumbnail' style='text-align: center;'>
-            <div id = 'single_product'>
+                <div class='card'>
+                        <img class='card-img-top' src='admin_area/product_images/$book_image' height='267' width='100%' alt='Book'>
+                        <div class='card-block'>
+                         <h4 class='card-title'>$book_title</h4>
+                        <p class='card-text'>Price : Rs. $book_price </p>
+                         <a href='detail.php?book_id=$book_id' class='btn btn-primary'>View Details</a>
+                </div>
+            </div>
+            </div>
+           <!-- <div id = 'single_product'>
                 <h3>$book_title</h3>
-                <img src='admin_area/product_images/$book_image' width='100%' height='180'/>
+                <img src='admin_area/product_images/$book_image' width='100%' height='267'/>
                 <b>Price : Rs. $book_price</b>
                 <a class='btn btn-primary btn-block' href='detail.php?book_id=$book_id'>Details</a>
 
                 </div>
-                </div>
+                </div>-->
 
-            </div>
-        ";
+                ";
 
             }
         }
@@ -220,7 +228,7 @@ function getRequest()
                 $req_image = $row_req['img'];
 
                 echo "
-<div class=\"col-md-3 \">
+                <div class=\"col-md-3 \">
                 <div class=\"thumbnail\" style='text-align: center;'>
             <div id = 'single_product'>
 			
@@ -257,7 +265,7 @@ function getCatbook()
         $count_cats = mysqli_num_rows($run_cat_book);
 
         if ($count_cats == 0) {
-            echo "<h2 style='padding: 20px;'>There is no book in this category.</h2>";
+            echo "<h2 class='text-center text-danger'>There is no book in this category.</h2>";
         }
 
         while ($row_cat_book = mysqli_fetch_array($run_cat_book)) {

@@ -16,6 +16,7 @@ include("service/functions.php");
 <body>
 
 <?php include 'design/layout/_header.php'; ?>
+<div class="container">
     <!-- Latest Books -->
     <legend style="text-align: center">Latest Books</legend>
 
@@ -25,11 +26,9 @@ include("service/functions.php");
 
 
 
-
     <!-- /Request -->
     <legend style="text-align: center">Request</legend>
         <?php getRequest();?>
-
 </div>
 </body>
 </html>

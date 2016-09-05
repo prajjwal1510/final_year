@@ -15,18 +15,23 @@ include("service/functions.php");
 <body>
 <?php include 'design/layout/_header.php'; ?>
 <div class="container">
-    <legend style="text-align: center"><h2>Insert Book</h2></legend>
-    <form method="post" action="insert%20book.php" enctype="multipart/form-data">
+   <h2 class="text-center">Insert Book</h2>
+    <form method="post" action="insert%20book.php" class="form-inline" enctype="multipart/form-data" style="margin:0 auto;width: 40%; border-radius: 5px;box-shadow: 2px 2px 2px 2px black;padding:10px;">
         <div class="form-group">
-            <label>Book Title</label>
+            <label class="sr-only" for="exampleInputEmail3">Book Name</label>
             <input type="text" name="book_title" class="form-control" id="title" aria-describedby="booktitle" placeholder="Enter Book Name">
         </div>
         <div class="form-group">
-            <label>Book Author</label>
+            <label class="sr-only" for="exampleInputPassword3">Book Title</label>
+            <input type="text" name="book_title" class="form-control" id="title" aria-describedby="booktitle" placeholder="Enter Book Title">
+        </div>
+
+        <div class="form-group"> </br>
+            <label class="sr-only" for="exampleInputEmail3">Book Author</label>
             <input type="text" class="form-control" name="book_author" id="author" placeholder="Enter Book Author">
         </div>
-        <div class="form-group">
-            <label>Select Category</label>
+        <div class="form-group"></br>
+            <label class="sr-only" for="exampleInputPassword3">Select Category</label>
             <select class="form-control" name="book_cat" id="category">
                 <option>Select a Category</option>
 
@@ -44,8 +49,9 @@ include("service/functions.php");
                 ?>
             </select>
         </div>
-        <div class="form-group">
-            <label>Select Subject</label>
+
+        <div class="form-group"> </br>
+            <label class="sr-only" for="exampleInputEmail3">Select Subject</label>
             <select class="form-control" name = "book_subject" id="subject">
                 <option>Select a Subject</option>
                 <?php
@@ -63,23 +69,22 @@ include("service/functions.php");
                 ?>
             </select>
         </div>
-        <div class="form-group">
-            <label>Book Details</label>
-            <textarea class="form-control"  name="book_desc" id="detail" rows="3"></textarea>
+
+        <div class="form-group"> </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="sr-only" for="exampleInputEmail3">Book Details</label>
+            <textarea class="form-control"  name="book_desc" id="detail" rows="3" placeholder="Book Detail"></textarea>
         </div>
-        <div class="form-group">
-            <label>Book Price</label>
+        <div class="form-group"> </br>
+            <label class="sr-only" for="exampleInputEmail3">Book Price</label>
             <input type="text" class="form-control" name="book_price" id="price" placeholder="Enter Price">
         </div>
-
-        <div class="form-group">
-            <label for="exampleInputFile">Book Image</label>
-            <input type="file" class="form-control-file" name="book_image"  id="image" aria-describedby="fileHelp">
-            <small id="fileHelp" class="form-text text-muted">Insert latest book image.</small>
+        <div class="form-group"> </br>
+            <input type="file" class="form-control" name="book_image"  id="image" aria-describedby="fileHelp">
         </div>
+        <br><br>
         <button type="submit" name="insert_post" value="Insert Now" class="btn btn-primary">Submit</button>
     </form>
-
+<br>
 
 
 </div>
